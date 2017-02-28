@@ -14,7 +14,6 @@ docker run --volumes-from $OVPN_DATA --rm kylemanna/openvpn ovpn_genconfig -u ud
 # Generate the EasyRSA PKI certificate authority.
 docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn ovpn_initpki
 
-cp service.conf /etc/init/docker-openvpn.conf
+cp service.conf /etc/systemd/system/openvpn-docker.conf
 
-sudo stop docker-openvpn || true
-sudo start docker-openvpn
+service docker-openvpn restart
