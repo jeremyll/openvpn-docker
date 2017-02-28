@@ -16,4 +16,4 @@ docker run --volumes-from $OVPN_DATA --rm -it kylemanna/openvpn ovpn_initpki
 
 cp service.conf /etc/systemd/system/openvpn-docker.conf
 
-service docker-openvpn restart
+service openvpn-docker restart
